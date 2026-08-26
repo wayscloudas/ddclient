@@ -4123,6 +4123,26 @@ Example ${program}.conf file entries:
   password=your-dynv6-http-token                            \\
   yourhostname.dynv6.net
 
+  ## Dynway (https://dynway.eu) - dynamic DNS for WAYSCloud users
+  ## Use the router token credentials from the Dynway control panel.
+  ## Configure one stanza per address family because Dynway accepts one address per update.
+  ##
+  ## IPv4:
+  protocol=dyndns2,                                         \\
+  usev4=webv4, usev6=disabled,                              \\
+  server=dynupdate.wayscloud.services,                      \\
+  login=your-dynway-router-username,                        \\
+  password=your-dynway-router-password                      \\
+  yourhostname.dynway.eu
+  ##
+  ## IPv6:
+  protocol=dyndns2,                                         \\
+  usev4=disabled, usev6=webv6,                              \\
+  server=dynupdate.wayscloud.services,                      \\
+  login=your-dynway-router-username,                        \\
+  password=your-dynway-router-password                      \\
+  yourhostname.dynway.eu
+
   ## Joker.com (https://joker.com) - domain registrar with dynamic DNS support
   ## Uses dyndns2-compatible /nic/update endpoint with HTTP Basic Auth.
   ## The login and password are the DDNS credentials from Joker.com's DNS
