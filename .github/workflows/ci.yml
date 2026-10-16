@@ -15,7 +15,7 @@ jobs:
           - debian:testing
           - debian:stable
           - debian:oldstable
-    runs-on: ubuntu-latest
+    runs-on: [self-hosted, linux, x64, wayscloud-linux]
     container:
       image: ${{ matrix.image }}
     steps:
@@ -65,7 +65,7 @@ jobs:
           - fedora:rawhide
           - almalinux:8
           - almalinux:latest
-    runs-on: ubuntu-latest
+    runs-on: [self-hosted, linux, x64, wayscloud-linux]
     container:
       image: ${{ matrix.image }}
     steps:
